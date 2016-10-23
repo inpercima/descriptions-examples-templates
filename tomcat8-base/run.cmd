@@ -1,0 +1,1 @@
+docker run -d -i -t -p 8080:8080 inpercima/tomcat8-base

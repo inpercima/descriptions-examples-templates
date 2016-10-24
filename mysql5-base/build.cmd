@@ -1,1 +1,0 @@
-docker build -t inpercima/mysql5-base .

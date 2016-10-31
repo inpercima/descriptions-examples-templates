@@ -15,4 +15,4 @@ ENV PATH $PATH:$CATALINA_HOME/bin
 
 EXPOSE 8080
 
-CMD ["catalina.sh", "run"]
+ENTRYPOINT ["catalina.sh", "run"]

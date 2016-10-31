@@ -1,13 +1,13 @@
 #!/bin/sh
-# create all necessary images
+# build all images
 # ubuntu
 cd ubuntu-base
-sh build.sh
+./build.sh
 
 # java
 cd ../java8-base
-sh build.sh
+./build.sh
 
 # tomcat
 cd ../tomcat8-base
-sh build.sh
+./build.sh

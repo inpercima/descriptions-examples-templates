@@ -5,8 +5,14 @@ It contains some base images and there Dockerfiles to work with them.
 # Repository basics
 ## Build and run a image
 
-    
-    docker build -t inpercima/ubuntu-base .
+    git clone https://github.com/inpercima/docker
+    cd docker
+    # windows PowerShell
+    .\build.cmd
+    # windows cmd
+    build.cmd
+    # linux
+    ./build.sh
 
 # Cheat sheet
 ## Introduction

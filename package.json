@@ -1,0 +1,9 @@
+{
+  "name": "docker",
+  "version": "1.0.0",
+  "description": "A place working with docker",
+  "author": "Marcel Jänicke",
+  "devDependencies": {
+    "shelljs": "^0.7.0"
+  }
+}

@@ -4,15 +4,14 @@ It contains some base images and there Dockerfiles to work with them.
 
 # Repository basics
 ## Build and run a image
+You will need node/npm to run the scripts.
 
     git clone https://github.com/inpercima/docker
     cd docker
-    # windows PowerShell
-    .\build.cmd
-    # windows cmd
-    build.cmd
-    # linux
-    ./build.sh
+    # install dependencies
+    npm install
+    # build all images
+    node build.js
 
 # Cheat sheet
 ## Introduction

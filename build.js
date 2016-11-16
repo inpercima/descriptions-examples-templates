@@ -11,7 +11,7 @@ if (!shjs.which('docker')) {
   // java
   shjs.cd('../java8-base');
   shjs.exec('node build.js');
-  //java
+  // tomcat
   shjs.cd('../tomcat8-base');
   shjs.exec('node build.js');
 }

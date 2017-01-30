@@ -65,7 +65,7 @@ with `.`
 * `docker stop <CONTAINER-ID/NAME>` stops a container
 * `docker logs <CONTAINER-ID/NAME>` gets mapped logs from the container
 * `docker inspect <CONTAINER-ID/NAME>` gets some information about the container
-* `docker ps -a` list all containers, started and stopped, without ``-a` stared are listed only
+* `docker ps -a` list all containers, started and stopped, without `-a` started are listed only
 * `docker rm -f <CONTAINER-ID/NAME>` removes a container
  * `-f` removes forced, if the container should be removed while running
 * `docker exec -it <CONTAINER-ID/NAME> /bin/bash` interact with the container with a new instance of the shell

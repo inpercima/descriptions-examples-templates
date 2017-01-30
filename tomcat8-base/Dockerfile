@@ -2,7 +2,7 @@ FROM inpercima/java8-base
 
 MAINTAINER Marcel Jänicke <inpercima@gmail.com>
 
-ARG version=8.0.39
+ARG version=8.5.11
 
 RUN cd /tmp && \
     wget http://archive.apache.org/dist/tomcat/tomcat-8/v$version/bin/apache-tomcat-$version.tar.gz && \

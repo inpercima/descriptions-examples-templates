@@ -4,14 +4,17 @@ if (!shjs.which('docker')) {
   shjs.echo('Sorry, this script requires docker.');
   shjs.exit(1);
 } else {
-  // build all images
+  // build all base images
   // ubuntu
   shjs.cd('ubuntu-base');
   shjs.exec('node build.js');
-  // java
+  // alpine
+  shjs.cd('../alpine-base');
+  shjs.exec('node build.js');
+  // java on ubuntu
   shjs.cd('../java8-base');
   shjs.exec('node build.js');
-  // tomcat
+  // tomcat on ubuntu
   shjs.cd('../tomcat8-base');
   shjs.exec('node build.js');
 }

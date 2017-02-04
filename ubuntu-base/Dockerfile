@@ -1,4 +1,4 @@
-FROM ubuntu:16.04
+FROM ubuntu:16.10
 
 MAINTAINER Marcel Jänicke <inpercima@gmail.com>
 

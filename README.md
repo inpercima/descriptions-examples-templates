@@ -3,17 +3,29 @@ This repository is created to learn and work with docker images and containers.
 It contains some base images and there Dockerfiles to work with them.
 
 # Repository basics
-## Build and run a image
-You will need node/npm to run the scripts.
+## clone
 
     git clone https://github.com/inpercima/docker
     cd docker
+
+## Work with node/npm via shelljs
+All images can be build with node.js and shelljs.
+
     # install dependencies
     npm install
     # build all images
     node build.js
 
-# Cheat sheet
+## Work with docker-compose
+Some images/container can be build with docker-compose to handle the containers, e.g. mysql.
+
+    # deploy mysql
+    docker-compose up- d
+    # undeploy mysql
+    docker-compose down
+
+
+# Cheat sheet docker
 ## Introduction
 Collection of commands creating/removing docker images and containers and working with them.
 
@@ -56,7 +68,7 @@ with `.`
  * `-i` starts the images as an interactive container
  * `-d` starts the images as an deamon container
  * `-p <PORTS>` bind ports from host to the container
- * `-t` maps the console to to the container
+ * `-t` maps the console to the container
 * `docker images` list all images
 * `docker rmi <IMAGE-ID/NAME>` delete an image
 
@@ -70,5 +82,59 @@ with `.`
  * `-f` removes forced, if the container should be removed while running
 * `docker exec -it <CONTAINER-ID/NAME> /bin/bash` interact with the container with a new instance of the shell
  * `-i` interactive container
- * `-t` maps the console to to the container
+ * `-t` maps the console to the container
  * to detach use `Ctrl`+`P`+`Q`
+
+# Cheat sheet docker-compose
+## Introduction
+Collection of commands working with docker containers under docker-compose.
+
+## Preparation
+To start with docker-compose an file named `docker-compose.yml` is needed. Mostly it is in the same directory working on.
+
+    version: "2"
+    services:
+      mysql:
+        image: mysql:5.7
+        container_name: mysql
+        mem_limit: 1g
+        ports:
+          - "3306:3306"
+        restart: unless-stopped
+        environment:
+          - MYSQL_ROOT_PASSWORD=password
+        volumes:
+          - data-mysql:/var/lib/mysql
+        command: mysqld --lower_case_table_names=1 --max_allowed_packet=100M
+      phpmyadmin:
+        image: phpmyadmin/phpmyadmin
+        container_name: phpmyadmin
+        mem_limit: 1g
+        restart: unless-stopped
+        environment:
+          - PMA_HOSTS=mysql
+        ports:
+          - "80:80"
+        depends_on:
+          - mysql
+    volumes:
+      data-mysql:
+
+* `version: "2"` version 2 of docker-compose
+* `services` the listes services/containers
+* `mysql` the name of one service, e.g. mysql
+* `image` the image from the hub wich should be used
+* `container_name` name of the created container
+* `mem_limit` memory limit
+* `ports` bind ports from host to the container
+* `restart: unless-stopped` restart service when stopped
+* `environment` environment for the container
+* `volumes` mapped volume
+* `command` comand line
+* `depends_on` the service on which this service depends
+* `volumes` parallel to `services` created volumes which can mapped
+  
+## Containers
+* `docker-compose up -d` deploy application
+* `docker-compose logs -f` analyze logs
+* `docker-compose down` undeploy application

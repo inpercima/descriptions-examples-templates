@@ -1,6 +1,6 @@
 FROM inpercima/java8-base
 
-MAINTAINER Marcel Jänicke <inpercima@gmail.com>
+LABEL maintainer="Marcel Jänicke <inpercima@gmail.com>"
 
 ADD app.jar /data/app.jar
 

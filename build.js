@@ -5,11 +5,11 @@ if (!shjs.which('docker')) {
   shjs.exit(1);
 } else {
   // build all base images
-  // ubuntu
-  shjs.cd('ubuntu-base');
-  shjs.exec('node build.js');
   // alpine
-  shjs.cd('../alpine-base');
+  shjs.cd('alpine-base');
+  shjs.exec('node build.js');
+  // ubuntu
+  shjs.cd('../ubuntu-base');
   shjs.exec('node build.js');
   // java on ubuntu
   shjs.cd('../java8-base');

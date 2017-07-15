@@ -1,22 +1,39 @@
-# About this
+# about this
 This repository is created to learn and work with docker images and containers.
 It contains some base images and there Dockerfiles to work with them.
 
-# Repository basics
-## clone
+# Necessary tools
 
+* npm >= 4.0
+* docker
+
+# Recommended tools
+* yarn
+* node >= 4.4
+
+# Simple usage
+
+    # clone project
     git clone https://github.com/inpercima/docker
     cd docker
 
-## Work with node/npm via shelljs
+    # work with docker
+    docker images
+
+# Work with node via shelljs
 All images can be build with node.js and shelljs.
 
-    # install dependencies
+    # install tools and frontend dependencies manually via npm or yarn
+    # npm
     npm install
+
+    # yarn
+    yarn
+
     # build all images
     node build.js
 
-## Work with docker-compose
+# Work with docker-compose
 Some images/container can be build with docker-compose to handle the containers, e.g. mysql.
 
     # deploy mysql
@@ -35,7 +52,7 @@ This includes commands to build an image.
 
     FROM ubuntu:16.04
 
-    MAINTAINER Marcel Jänicke <inpercima@gmail.com>
+    LABEL maintainer="Marcel Jänicke <inpercima@gmail.com>"
 
     ARG port=80
 
@@ -50,7 +67,7 @@ This includes commands to build an image.
     CMD ["/path/to/runfile"]
 
 * `FROM` load a base image from the docker hub
-* `MAINTAINER` name the author with contact of the image
+* `LABEL maintainer` name the author of the image with contact details
 * `ARG` defines a variable for build-time
 * `RUN` run a command in the image, use a separate line for each command with `&& \`
 * `EXPOSE` define a port the container listen

@@ -1,8 +1,8 @@
 FROM inpercima/java8-base
 
-MAINTAINER Marcel Jänicke <inpercima@gmail.com>
+LABEL maintainer="Marcel Jänicke <inpercima@gmail.com>"
 
-ARG version=8.5.11
+ARG version=8.5.16
 
 RUN cd /tmp && \
     wget http://archive.apache.org/dist/tomcat/tomcat-8/v$version/bin/apache-tomcat-$version.tar.gz && \

@@ -1,6 +1,6 @@
 FROM inpercima/ubuntu-base
 
-MAINTAINER Marcel Jänicke <inpercima@gmail.com>
+LABEL maintainer="Marcel Jänicke <inpercima@gmail.com>"
 
 RUN apt-get update && \
     apt-get install -y  software-properties-common && \

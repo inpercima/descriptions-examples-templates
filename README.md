@@ -77,15 +77,14 @@ This includes commands to build an image.
 
 ## Images
 * `docker build -t <NAME> /path/to/Dockerfile` creates a docker image
- * `-t <NAME>` name the image
- * `/path/to/Dockerfile` the location of the Dockerfile, is it in the same directory `/path/Dockerfile` can replaced
+   * `-t <NAME>` name the image
+   * `/path/to/Dockerfile` the location of the Dockerfile, is it in the same directory `/path/Dockerfile` can replaced
 with `.`
-
 * `docker run -it -d -p 8080:8081 <IMAGE-ID/NAME>` run a docker image
- * `-i` starts the images as an interactive container
- * `-d` starts the images as an deamon container
- * `-p <PORTS>` bind ports from host to the container
- * `-t` maps the console to the container
+   * `-i` starts the images as an interactive container
+   * `-d` starts the images as an deamon container
+   * `-p <PORTS>` bind ports from host to the container
+   * `-t` maps the console to the container
 * `docker images` list all images
 * `docker rmi <IMAGE-ID/NAME>` delete an image
 
@@ -96,11 +95,11 @@ with `.`
 * `docker inspect <CONTAINER-ID/NAME>` gets some information about the container
 * `docker ps -a` list all containers, started and stopped, without `-a` started are listed only
 * `docker rm -f <CONTAINER-ID/NAME>` removes a container
- * `-f` removes forced, if the container should be removed while running
+   * `-f` removes forced, if the container should be removed while running
 * `docker exec -it <CONTAINER-ID/NAME> /bin/bash` interact with the container with a new instance of the shell
- * `-i` interactive container
- * `-t` maps the console to the container
- * to detach use `Ctrl`+`P`+`Q`
+   * `-i` interactive container
+   * `-t` maps the console to the container
+   * to detach use `Ctrl`+`P`+`Q`
 
 # Cheat sheet docker-compose
 ## Introduction

@@ -1,45 +1,49 @@
-# about this
+# About this
 This repository is created to learn and work with docker images and containers.
 It contains some base images and there Dockerfiles to work with them.
 
 # Necessary tools
-
-* npm >= 4.0
 * docker
 
-# Recommended tools
-* yarn
-* node >= 4.4
+# Optionally tools
+* npm 4.0 or higher
+* node 4.4 or higher
 
 # Simple usage
 
-    # clone project
-    git clone https://github.com/inpercima/docker
-    cd docker
+```
+# clone project
+git clone https://github.com/inpercima/docker
+cd docker
 
-    # work with docker
-    docker images
+# work with docker
+docker images
+```
 
 # Work with node via shelljs
 All images can be build with node.js and shelljs.
 
-    # install tools and frontend dependencies manually via npm or yarn
-    # npm
-    npm install
+```
+# install tools and frontend dependencies manually via npm or yarn
+# npm
+npm install
 
-    # yarn
-    yarn
+# yarn
+yarn
 
-    # build all images
-    node build.js
+# build all images
+node build.js
+```
 
 # Work with docker-compose
 Some images/container can be build with docker-compose to handle the containers, e.g. mysql.
 
-    # deploy mysql
-    docker-compose up- d
-    # undeploy mysql
-    docker-compose down
+```
+# deploy mysql
+docker-compose up- d
+# undeploy mysql
+docker-compose down
+```
 
 
 # Cheat sheet docker
@@ -50,21 +54,23 @@ Collection of commands creating/removing docker images and containers and workin
 To create a image a configuration file (a simple textfile) named `Dockerfile` is needed. Mostly it is in the same directory working on.
 This includes commands to build an image.
 
-    FROM ubuntu:16.04
+```
+FROM ubuntu:16.04
 
-    LABEL maintainer="Marcel Jänicke <inpercima@gmail.com>"
+LABEL maintainer="Marcel Jänicke <inpercima@gmail.com>"
 
-    ARG port=80
+ARG port=80
 
-    RUN echo "Europe/Berlin" > /etc/timezone && dpkg-reconfigure -f noninteractive tzdata
+RUN echo "Europe/Berlin" > /etc/timezone && dpkg-reconfigure -f noninteractive tzdata
 
-    EXPOSE $port
+EXPOSE $port
 
-    COPY hostfile.txt /file-in-image.txt
+COPY hostfile.txt /file-in-image.txt
 
-    ENTRYPOINT ["/path/to/runfile"]
+ENTRYPOINT ["/path/to/runfile"]
 
-    CMD ["/path/to/runfile"]
+CMD ["/path/to/runfile"]
+```
 
 * `FROM` load a base image from the docker hub
 * `LABEL maintainer` name the author of the image with contact details
@@ -108,33 +114,35 @@ Collection of commands working with docker containers under docker-compose.
 ## Preparation
 To start with docker-compose an file named `docker-compose.yml` is needed. Mostly it is in the same directory working on.
 
-    version: "2"
-    services:
-      mysql:
-        image: mysql:5.7
-        container_name: mysql
-        mem_limit: 1g
-        ports:
-          - "3306:3306"
-        restart: unless-stopped
-        environment:
-          - MYSQL_ROOT_PASSWORD=password
-        volumes:
-          - data-mysql:/var/lib/mysql
-        command: mysqld --lower_case_table_names=1 --max_allowed_packet=100M
-      phpmyadmin:
-        image: phpmyadmin/phpmyadmin
-        container_name: phpmyadmin
-        mem_limit: 1g
-        restart: unless-stopped
-        environment:
-          - PMA_HOSTS=mysql
-        ports:
-          - "80:80"
-        depends_on:
-          - mysql
+```
+version: "2"
+services:
+  mysql:
+    image: mysql:5.7
+    container_name: mysql
+    mem_limit: 1g
+    ports:
+      - "3306:3306"
+    restart: unless-stopped
+    environment:
+      - MYSQL_ROOT_PASSWORD=password
     volumes:
-      data-mysql:
+      - data-mysql:/var/lib/mysql
+    command: mysqld --lower_case_table_names=1 --max_allowed_packet=100M
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    container_name: phpmyadmin
+    mem_limit: 1g
+    restart: unless-stopped
+    environment:
+      - PMA_HOSTS=mysql
+    ports:
+      - "80:80"
+    depends_on:
+      - mysql
+volumes:
+  data-mysql:
+```
 
 * `version: "2"` version 2 of docker-compose
 * `services` the listes services/containers

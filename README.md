@@ -24,12 +24,9 @@ docker images
 All images can be build with node.js and shelljs.
 
 ```
-# install tools and frontend dependencies manually via npm or yarn
+# install tools and frontend dependencies manually via npm
 # npm
 npm install
-
-# yarn
-yarn
 
 # build all images
 node build.js

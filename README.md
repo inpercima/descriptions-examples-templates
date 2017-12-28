@@ -25,7 +25,6 @@ All images can be build with node.js and shelljs.
 
 ```
 # install tools and frontend dependencies manually via npm
-# npm
 npm install
 
 # build all images
@@ -41,7 +40,6 @@ docker-compose up- d
 # undeploy mysql
 docker-compose down
 ```
-
 
 # Cheat sheet docker
 ## Introduction

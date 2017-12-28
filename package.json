@@ -4,6 +4,6 @@
   "description": "A place working with docker",
   "author": "Marcel Jänicke",
   "devDependencies": {
-    "shelljs": "^0.7.0"
+    "shelljs": "0.7.8"
   }
 }

@@ -1,4 +1,4 @@
-FROM inpercima/alpine-java8
+FROM anapsix/alpine-java:8_server-jre_unlimited
 
 LABEL maintainer="Marcel Jänicke <inpercima@gmail.com>"
 

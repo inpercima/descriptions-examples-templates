@@ -9,7 +9,7 @@ It contains some base images and there Dockerfiles.
 This repository uses [shelljs](https://github.com/shelljs/shelljs). The docker commands can be build and run with node.js and shelljs.
 * npm 4.0 or higher
 * node 4.4 or higher
-* yarn 1.0.1 or higher
+* yarn 1.0.1 or higher, used in this repository
 
 # Preparation
 

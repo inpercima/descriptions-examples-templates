@@ -1,9 +1,21 @@
 {
-  "name": "docker",
-  "version": "1.0.0",
-  "description": "A place working with docker",
   "author": "Marcel Jänicke",
+  "contributors": [
+    {
+      "name": "Marcel Jänicke",
+      "email": "inpercima@gmail.com"
+    }
+  ],
+  "description": "A place working with docker",
   "devDependencies": {
-    "shelljs": "0.7.8"
-  }
+    "shelljs": "0.8.1"
+  },
+  "engines": {
+    "node": ">=6.9.0"
+  },
+  "license": "MIT",
+  "name": "docker",
+  "repository": "https://github.com/inpercima/docker",
+  "private": true,
+  "version": "1.0.0"
 }

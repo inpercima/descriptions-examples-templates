@@ -1,34 +1,49 @@
 # About this
 This repository is created to learn and work with docker images and containers.
-It contains some base images and there Dockerfiles to work with them.
+It contains some base images and there Dockerfiles.
 
 # Necessary tools
 * docker
 
 # Optionally tools
+This repository uses [shelljs](https://github.com/shelljs/shelljs. The docker commands can be build and run with node.js and shelljs.
 * npm 4.0 or higher
 * node 4.4 or higher
+* yarn 1.0.1 or higher
 
-# Simple usage
+# Preparation
 
 ```
 # clone project
 git clone https://github.com/inpercima/docker
 cd docker
+```
 
-# work with docker
+# Work with docker
+
+```
 docker images
+docker ps -a
+...
 ```
 
 # Work with node via shelljs
-All images can be build with node.js and shelljs.
 
 ```
 # install tools and frontend dependencies manually via npm
+# npm
 npm install
+# yarn
+yarn
 
-# build all images
+# build an image e.g. alpine-java8
+cd alpine-java8
 node build.js
+
+# run an image e.g. alpine-java8-spring-boot
+cd alpine-java8-spring-boot
+node build.js
+node run.js
 ```
 
 # Work with docker-compose
@@ -36,7 +51,8 @@ Some images/container can be build with docker-compose to handle the containers,
 
 ```
 # deploy mysql
-docker-compose up- d
+docker-compose up -d
+
 # undeploy mysql
 docker-compose down
 ```
@@ -70,6 +86,7 @@ CMD ["/path/to/runfile"]
 * `FROM` load a base image from the docker hub
 * `LABEL maintainer` name the author of the image with contact details
 * `ARG` defines a variable for build-time
+* `ENV` defines an environment variable 
 * `RUN` run a command in the image, use a separate line for each command with `&& \`
 * `EXPOSE` define a port the container listen
 * `COPY` copy files or directory from the host system into the image

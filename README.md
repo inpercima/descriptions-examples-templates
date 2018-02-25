@@ -1,17 +1,20 @@
-# About this
+# About this - docker
+[![MIT license](https://img.shields.io/badge/license-MIT-blue.svg)](./LICENSE.md)
+
 This repository is created to learn and work with docker images and containers.
 It contains some base images and there Dockerfiles.
 
 # Necessary tools
-* docker
+* `docker 17.12.0-ce`
 
 # Optionally tools
-This repository uses [shelljs](https://github.com/shelljs/shelljs). The docker commands can be build and run with node.js and shelljs.
-* npm 4.0 or higher
-* node 4.4 or higher
-* yarn 1.0.1 or higher, used in this repository
+This repository uses [shelljs](https://github.com/shelljs/shelljs) to build and run the docker commands with nodejs.
+For this you need:
+* `node 4.4` or higher in combination with
+* `npm 4.0.0` or higher or
+* `yarn 1.0.1` or higher, used in this repository
 
-# Preparation
+# Getting Started
 
 ```
 # clone project
@@ -19,21 +22,25 @@ git clone https://github.com/inpercima/docker
 cd docker
 ```
 
-# Work with docker
+# Usage
+## Work with docker
 
 ```
-docker images
-docker ps -a
-...
+# build an image e.g. alpine-java8
+cd alpine-java8
+docker build -t inpercima/alpine-java8 .
+
+# run an image e.g. alpine-java8-spring-boot
+cd alpine-java8-spring-boot
+docker build -t inpercima/alpine-java8-spring-boot .
+docker rm -f inpercima_ajsb
+docker run --name inpercima_ajsb -d -it -p 8080:8080 inpercima/alpine-java8-spring-boot
 ```
 
-# Work with node via shelljs
+## Work with nodejs
 
 ```
-# install tools and frontend dependencies manually via npm
-# npm
-npm install
-# yarn
+# install tools
 yarn
 
 # build an image e.g. alpine-java8
@@ -46,7 +53,7 @@ node build.js
 node run.js
 ```
 
-# Work with docker-compose
+## Work with docker-compose
 Some images/container can be build with docker-compose to handle the containers, e.g. mysql.
 
 ```

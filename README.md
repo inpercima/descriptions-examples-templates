@@ -5,7 +5,7 @@ This repository is created to learn and work with docker images and containers.
 It contains some base images and there Dockerfiles.
 
 # Necessary tools
-* `docker 17.12.0-ce`
+* `docker 17.03.0-ce` or higher
 
 # Optionally tools
 This repository uses [shelljs](https://github.com/shelljs/shelljs) to build and run the docker commands with nodejs.

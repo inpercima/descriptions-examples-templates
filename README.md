@@ -4,15 +4,16 @@
 This repository is created to learn and work with docker images and containers.
 It contains some base images and there Dockerfiles.
 
-# Necessary tools
+# Prerequisites
+## Docker
 * `docker 17.03.0-ce` or higher
 
-# Optionally tools
+## Optional
 This repository uses [shelljs](https://github.com/shelljs/shelljs) to build and run the docker commands with nodejs.
 For this you need:
 * `node 4.4` or higher in combination with
-* `npm 4.0.0` or higher or
-* `yarn 1.0.1` or higher, used in this repository
+  * `npm 4.0.0` or higher or
+  * `yarn 1.0.1` or higher, used in this repository
 
 # Getting Started
 

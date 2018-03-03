@@ -6,7 +6,7 @@
       "email": "inpercima@gmail.com"
     }
   ],
-  "description": "A place working with docker",
+  "description": "This repository is created to learn and work with docker images and containers. It contains some base images and there Dockerfiles.",
   "devDependencies": {
     "shelljs": "0.8.1"
   },

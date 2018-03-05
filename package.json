@@ -8,14 +8,14 @@
   ],
   "description": "This repository is created to learn and work with docker images and containers. It contains some base images and there Dockerfiles.",
   "devDependencies": {
-    "shelljs": "0.8.1"
+    "swaaplate-tools": "inpercima/swaaplate-tools#master"
   },
   "engines": {
     "node": ">=4.4.0"
   },
   "license": "MIT",
   "name": "docker",
-  "repository": "https://github.com/inpercima/docker",
   "private": true,
-  "version": "1.0.0"
+  "repository": "https://github.com/inpercima/docker",
+  "version": "1.0.0-SNAPSHOT"
 }

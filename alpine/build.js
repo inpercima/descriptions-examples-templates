@@ -1,3 +1,3 @@
-var shjs = require('shelljs');
+var sTools = require('swaaplate-tools');
 
-shjs.exec('docker build -t inpercima/alpine .');
+sTools.exec('docker', 'build -t inpercima/alpine .');

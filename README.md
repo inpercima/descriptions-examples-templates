@@ -8,12 +8,10 @@ It contains some base images and there Dockerfiles.
 ## Docker
 * `docker 17.03.0-ce` or higher
 
-## Optional
-This repository uses [shelljs](https://github.com/shelljs/shelljs) to build and run the docker commands with nodejs.
-For this you need:
-* `node 4.4` or higher in combination with
+## Optional to run node scripts
+* `node 4.4.0` or higher in combination with
   * `npm 4.0.0` or higher or
-  * `yarn 1.0.1` or higher, used in this repository
+  * `yarn 1.0.0` or higher, used in this repository
 
 # Getting Started
 
@@ -38,11 +36,12 @@ docker rm -f inpercima_ajsb
 docker run --name inpercima_ajsb -d -it -p 8080:8080 inpercima/alpine-java8-spring-boot
 ```
 
-## Work with nodejs
+## Work with node scripts
 
 ```
-# install tools
 yarn
+# or
+npm install
 
 # build an image e.g. alpine-java8
 cd alpine-java8

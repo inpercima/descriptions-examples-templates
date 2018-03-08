@@ -1,3 +1,3 @@
-var sTools = require('swaaplate-tools');
+var lightjs = require('light-js');
 
-sTools.exec('docker', 'build -t inpercima/alpine .');
+lightjs.exec('docker', 'build -t inpercima/alpine .');

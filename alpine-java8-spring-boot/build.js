@@ -1,3 +1,3 @@
-var shjs = require('shelljs');
+var lightjs = require('light-js');
 
-shjs.exec('docker build -t inpercima/alpine-java8-spring-boot .');
+lightjs.exec('docker build -t inpercima/alpine-java8-spring-boot .');

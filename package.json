@@ -8,7 +8,7 @@
   ],
   "description": "This repository is created to learn and work with docker images and containers. It contains some base images and there Dockerfiles.",
   "devDependencies": {
-    "swaaplate-tools": "inpercima/swaaplate-tools#master"
+    "light-js": "inpercima/light-js#v0.1.0"
   },
   "engines": {
     "node": ">=4.4.0"

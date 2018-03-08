@@ -1,3 +1,3 @@
-var shjs = require('shelljs');
+var lightjs = require('light-js');
 
-shjs.exec('docker build -t inpercima/ubuntu .');
+lightjs.exec('docker build -t inpercima/ubuntu .');

@@ -1,4 +1,4 @@
-var shjs = require('shelljs');
+var lightjs = require('light-js');
 
-shjs.exec('docker rm -f inpercima_ujsb');
-shjs.exec('docker run --name inpercima_ujsb -d -it -p 8080:8080 inpercima/ubuntu-java8-spring-boot');
+lightjs.exec('docker rm -f inpercima_ujsb');
+lightjs.exec('docker run --name inpercima_ujsb -d -it -p 8080:8080 inpercima/ubuntu-java8-spring-boot');

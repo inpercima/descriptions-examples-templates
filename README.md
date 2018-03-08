@@ -13,7 +13,7 @@ It contains some base images and there Dockerfiles.
   * `npm 4.0.0` or higher or
   * `yarn 1.0.0` or higher, used in this repository
 
-# Getting Started
+# Getting started
 
 ```
 # clone project
@@ -22,7 +22,7 @@ cd docker
 ```
 
 # Usage
-## Work with docker
+## Using docker
 
 ```
 # build an image e.g. alpine-java8
@@ -36,7 +36,18 @@ docker rm -f inpercima_ajsb
 docker run --name inpercima_ajsb -d -it -p 8080:8080 inpercima/alpine-java8-spring-boot
 ```
 
-## Work with node scripts
+## Using docker-compose
+Some images/container can be build with docker-compose to handle the containers, e.g. mysql.
+
+```
+# deploy mysql
+docker-compose up -d
+
+# undeploy mysql
+docker-compose down
+```
+
+## Using node scripts
 
 ```
 yarn
@@ -51,17 +62,6 @@ node build.js
 cd alpine-java8-spring-boot
 node build.js
 node run.js
-```
-
-## Work with docker-compose
-Some images/container can be build with docker-compose to handle the containers, e.g. mysql.
-
-```
-# deploy mysql
-docker-compose up -d
-
-# undeploy mysql
-docker-compose down
 ```
 
 # Cheat sheet docker
@@ -102,14 +102,13 @@ CMD ["/path/to/runfile"]
 
 ## Images
 * `docker build -t <NAME> /path/to/Dockerfile` creates a docker image
-   * `-t <NAME>` name the image
-   * `/path/to/Dockerfile` the location of the Dockerfile, is it in the same directory `/path/Dockerfile` can replaced
-with `.`
+  * `-t <NAME>` name the image
+  * `/path/to/Dockerfile` the location of the Dockerfile, is it in the same directory `/path/Dockerfile` can replaced with `.`
 * `docker run -it -d -p 8080:8081 <IMAGE-ID/NAME>` run a docker image
-   * `-i` starts the images as an interactive container
-   * `-d` starts the images as an deamon container
-   * `-p <PORTS>` bind ports from host to the container
-   * `-t` maps the console to the container
+  * `-i` starts the images as an interactive container
+  * `-d` starts the images as an deamon container
+  * `-p <PORTS>` bind ports from host to the container
+  * `-t` maps the console to the container
 * `docker images` list all images
 * `docker rmi <IMAGE-ID/NAME>` delete an image
 
@@ -120,11 +119,11 @@ with `.`
 * `docker inspect <CONTAINER-ID/NAME>` gets some information about the container
 * `docker ps -a` list all containers, started and stopped, without `-a` started are listed only
 * `docker rm -f <CONTAINER-ID/NAME>` removes a container
-   * `-f` removes forced, if the container should be removed while running
+  * `-f` removes forced, if the container should be removed while running
 * `docker exec -it <CONTAINER-ID/NAME> /bin/bash` interact with the container with a new instance of the shell
-   * `-i` interactive container
-   * `-t` maps the console to the container
-   * to detach use `Ctrl`+`P`+`Q`
+  * `-i` interactive container
+  * `-t` maps the console to the container
+  * to detach use `Ctrl`+`P`+`Q`
 
 # Cheat sheet docker-compose
 ## Introduction

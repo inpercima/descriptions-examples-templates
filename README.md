@@ -1,5 +1,7 @@
 # About this - docker
 [![MIT license](https://img.shields.io/badge/license-MIT-blue.svg)](./LICENSE.md)
+[![dependencies Status](https://david-dm.org/inpercima/publicmedia/status.svg)](https://david-dm.org/inpercima/docker)
+[![devDependencies Status](https://david-dm.org/inpercima/publicmedia/dev-status.svg)](https://david-dm.org/inpercima/docker?type=dev)
 
 This repository is created to learn and work with docker images and containers.
 It contains some base images and there Dockerfiles.

@@ -34,8 +34,8 @@ docker image build -t inpercima/alpine-java8 .
 # run an image e.g. alpine-java8-spring-boot
 cd alpine-java8-spring-boot
 docker image build -t inpercima/alpine-java8-spring-boot .
-docker rm -f inpercima_ajsb
-docker run --name inpercima_ajsb -d -it -p 8080:8080 inpercima/alpine-java8-spring-boot
+docker container rm -f inpercima_ajsb
+docker container run --name inpercima_ajsb -d -it -p 8080:8080 inpercima/alpine-java8-spring-boot
 ```
 
 ## Using docker-compose
@@ -115,7 +115,7 @@ HEALTHCHECK --interval=30s --timeout=30s --start-period=10s --retries=3 \
   * `/path/to/Dockerfile` the location of the Dockerfile, is it in the same directory `/path/Dockerfile` can replaced with `.`
 * `docker image ls -a` list images
   * `-a` list all, includes intermediate images
-* `docker image rm <IMAGE-ID/NAME>` delete an image
+* `docker image rm <IMAGE-ID/NAME>` removes an image
 
 ## Containers
 * `docker container run -it -d -p 8080:8081 <IMAGE-ID/NAME>` run a docker container

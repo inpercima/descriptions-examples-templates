@@ -8,7 +8,7 @@ It contains some base images and there Dockerfiles.
 
 # Prerequisites
 ## Docker
-* `docker 17.03.0-ce` or higher
+* `docker 17.05.0-ce` or higher
 
 ## Optional to run node scripts
 * `node 4.4.0` or higher in combination with

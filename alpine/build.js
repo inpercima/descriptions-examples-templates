@@ -1,3 +1,3 @@
 var lightjs = require('light-js');
 
-lightjs.exec('docker', 'build -t inpercima/alpine .');
+lightjs.exec('docker', 'image build -t inpercima/alpine .');

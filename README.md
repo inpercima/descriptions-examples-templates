@@ -29,11 +29,11 @@ cd docker
 ```
 # build an image e.g. alpine-java8
 cd alpine-java8
-docker build -t inpercima/alpine-java8 .
+docker image build -t inpercima/alpine-java8 .
 
 # run an image e.g. alpine-java8-spring-boot
 cd alpine-java8-spring-boot
-docker build -t inpercima/alpine-java8-spring-boot .
+docker image build -t inpercima/alpine-java8-spring-boot .
 docker rm -f inpercima_ajsb
 docker run --name inpercima_ajsb -d -it -p 8080:8080 inpercima/alpine-java8-spring-boot
 ```
@@ -79,6 +79,8 @@ FROM ubuntu:16.04
 
 LABEL maintainer="Marcel Jänicke <inpercima@gmail.com>"
 
+WORKDIR /usr/src/app
+
 ARG port=80
 
 RUN echo "Europe/Berlin" > /etc/timezone && dpkg-reconfigure -f noninteractive tzdata
@@ -90,10 +92,14 @@ COPY hostfile.txt /file-in-image.txt
 ENTRYPOINT ["/path/to/runfile"]
 
 CMD ["/path/to/runfile"]
+
+HEALTHCHECK --interval=30s --timeout=30s --start-period=10s --retries=3 \
+    CMD curl -f http://localhost:8080 || exit 1
 ```
 
 * `FROM` load a base image from the docker hub
 * `LABEL maintainer` name the author of the image with contact details
+* `WORKDIR` set a path as workdir
 * `ARG` defines a variable for build-time
 * `ENV` defines an environment variable 
 * `RUN` run a command in the image, use a separate line for each command with `&& \`
@@ -101,25 +107,30 @@ CMD ["/path/to/runfile"]
 * `COPY` copy files or directory from the host system into the image
 * `ENTRYPOINT` defines a file which run with the container
 * `CMD` defines a file which run with the container
+* `HEALTHCHECK` integrate a check to an app
 
 ## Images
-* `docker build -t <NAME> /path/to/Dockerfile` creates a docker image
+* `docker image build -t <NAME> /path/to/Dockerfile` creates a docker image
   * `-t <NAME>` name the image
   * `/path/to/Dockerfile` the location of the Dockerfile, is it in the same directory `/path/Dockerfile` can replaced with `.`
-* `docker run -it -d -p 8080:8081 <IMAGE-ID/NAME>` run a docker image
+* `docker image ls -a` list images
+  * `-a` list all, includes intermediate images
+* `docker image rm <IMAGE-ID/NAME>` delete an image
+
+## Containers
+* `docker container run -it -d -p 8080:8081 <IMAGE-ID/NAME>` run a docker container
   * `-i` starts the images as an interactive container
   * `-d` starts the images as an deamon container
   * `-p <PORTS>` bind ports from host to the container
   * `-t` maps the console to the container
-* `docker images` list all images
-* `docker rmi <IMAGE-ID/NAME>` delete an image
-
-## Containers
-* `docker start <CONTAINER-ID/NAME>` starts a container
-* `docker stop <CONTAINER-ID/NAME>` stops a container
-* `docker logs <CONTAINER-ID/NAME>` gets mapped logs from the container
-* `docker inspect <CONTAINER-ID/NAME>` gets some information about the container
-* `docker ps -a` list all containers, started and stopped, without `-a` started are listed only
+* `docker container start <CONTAINER-ID/NAME>` starts a container
+* `docker container stop <CONTAINER-ID/NAME>` stops a container
+* `docker container logs <CONTAINER-ID/NAME>` gets mapped logs from the container
+* `docker container inspect <CONTAINER-ID/NAME>` gets some information about the container
+* `docker container pause <CONTAINER-ID/NAME>` pause all processes
+* `docker container unpause <CONTAINER-ID/NAME>` unpause all processes
+* `docker container ls -a` list containers
+  * `-a` list all, includes stopped
 * `docker rm -f <CONTAINER-ID/NAME>` removes a container
   * `-f` removes forced, if the container should be removed while running
 * `docker exec -it <CONTAINER-ID/NAME> /bin/bash` interact with the container with a new instance of the shell

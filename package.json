@@ -8,10 +8,10 @@
   ],
   "description": "This repository is created to learn and work with docker images and containers. It contains some base images and there Dockerfiles.",
   "devDependencies": {
-    "light-js": "inpercima/light-js#v0.1.0"
+    "light-js": "inpercima/light-js#v0.1.1"
   },
   "engines": {
-    "node": ">=4.4.0"
+    "node": ">=8.11.3"
   },
   "license": "MIT",
   "name": "docker",

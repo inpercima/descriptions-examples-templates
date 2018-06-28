@@ -11,9 +11,9 @@ It contains some base images and there Dockerfiles.
 * `docker 17.05.0-ce` or higher
 
 ## Optional to run node scripts
-* `node 4.4.0` or higher in combination with
-  * `npm 4.0.0` or higher or
-  * `yarn 1.0.0` or higher, used in this repository
+* `node 11.8.3` or higher in combination with
+  * `npm 5.6.0` or higher or
+  * `yarn 1.7.0` or higher, used in this repository
 
 # Getting started
 
@@ -178,7 +178,8 @@ volumes:
 * `version: "2"` version 2 of docker-compose
 * `services` the listes services/containers
 * `mysql` the name of one service, e.g. mysql
-* `image` the image from the hub wich should be used
+* `build` used if the image should build from a Dockerfile like `build: .`
+* `image` the image from the hub wich should be used or the name if build is used
 * `container_name` name of the created container
 * `mem_limit` memory limit
 * `ports` bind ports from host to the container
@@ -188,7 +189,7 @@ volumes:
 * `command` comand line
 * `depends_on` the service on which this service depends
 * `volumes` parallel to `services` created volumes which can mapped
-  
+
 ## Containers
 * `docker-compose up -d` deploy application
 * `docker-compose logs -f` analyze logs

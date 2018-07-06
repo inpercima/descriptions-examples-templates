@@ -1,4 +1,4 @@
-# About this - docker
+docker
 [![MIT license](https://img.shields.io/badge/license-MIT-blue.svg)](./LICENSE.md)
 [![dependencies Status](https://david-dm.org/inpercima/publicmedia/status.svg)](https://david-dm.org/inpercima/docker)
 [![devDependencies Status](https://david-dm.org/inpercima/publicmedia/dev-status.svg)](https://david-dm.org/inpercima/docker?type=dev)
@@ -6,16 +6,16 @@
 This repository is created to learn and work with docker images and containers.
 It contains some base images and there Dockerfiles.
 
-# Prerequisites
-## Docker
+## Prerequisites
+### Docker
 * `docker 17.05.0-ce` or higher
 
-## Optional to run node scripts
+### Optional to run node scripts
 * `node 11.8.3` or higher in combination with
   * `npm 5.6.0` or higher or
   * `yarn 1.7.0` or higher, used in this repository
 
-# Getting started
+## Getting started
 
 ```
 # clone project
@@ -23,8 +23,8 @@ git clone https://github.com/inpercima/docker
 cd docker
 ```
 
-# Usage
-## Using docker
+## Usage
+### Using docker
 
 ```
 # build an image e.g. alpine-java8
@@ -38,7 +38,7 @@ docker container rm -f inpercima_ajsb
 docker container run --name inpercima_ajsb -d -it -p 8080:8080 inpercima/alpine-java8-spring-boot
 ```
 
-## Using docker-compose
+### Using docker-compose
 Some images/container can be build with docker-compose to handle the containers, e.g. mysql.
 
 ```
@@ -49,7 +49,7 @@ docker-compose up -d
 docker-compose down
 ```
 
-## Using node scripts
+### Using node scripts
 
 ```
 yarn
@@ -66,11 +66,11 @@ node build.js
 node run.js
 ```
 
-# Cheat sheet docker
-## Introduction
+## Cheat sheet docker
+### Introduction
 Collection of commands creating/removing docker images and containers and working with them.
 
-## Preparation
+### Preparation
 To create a image a configuration file (a simple textfile) named `Dockerfile` is needed. Mostly it is in the same directory working on.
 This includes commands to build an image.
 
@@ -109,7 +109,7 @@ HEALTHCHECK --interval=30s --timeout=30s --start-period=10s --retries=3 \
 * `CMD` defines a file which run with the container
 * `HEALTHCHECK` integrate a check to an app
 
-## Images
+### Images
 * `docker image build -t <NAME> /path/to/Dockerfile` creates a docker image
   * `-t <NAME>` name the image
   * `/path/to/Dockerfile` the location of the Dockerfile, is it in the same directory `/path/Dockerfile` can replaced with `.`
@@ -117,7 +117,7 @@ HEALTHCHECK --interval=30s --timeout=30s --start-period=10s --retries=3 \
   * `-a` list all, includes intermediate images
 * `docker image rm <IMAGE-ID/NAME>` removes an image
 
-## Containers
+### Containers
 * `docker container run -it -d -p 8080:8081 <IMAGE-ID/NAME>` run a docker container
   * `-i` starts the images as an interactive container
   * `-d` starts the images as an deamon container
@@ -138,11 +138,11 @@ HEALTHCHECK --interval=30s --timeout=30s --start-period=10s --retries=3 \
   * `-t` maps the console to the container
   * to detach use `Ctrl`+`P`+`Q`
 
-# Cheat sheet docker-compose
-## Introduction
+## Cheat sheet docker-compose
+### Introduction
 Collection of commands working with docker containers under docker-compose.
 
-## Preparation
+### Preparation
 To start with docker-compose an file named `docker-compose.yml` is needed. Mostly it is in the same directory working on.
 
 ```
@@ -190,7 +190,7 @@ volumes:
 * `depends_on` the service on which this service depends
 * `volumes` parallel to `services` created volumes which can mapped
 
-## Containers
+### Containers
 * `docker-compose up -d` deploy application
 * `docker-compose logs -f` analyze logs
 * `docker-compose down` undeploy application

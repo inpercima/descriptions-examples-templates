@@ -4,7 +4,7 @@ LABEL maintainer="Marcel Jänicke <inpercima@gmail.com>"
 
 WORKDIR /tmp
 
-ARG VERSION="8.5.28"
+ARG VERSION="8.5.32"
 
 RUN wget http://archive.apache.org/dist/tomcat/tomcat-8/v$VERSION/bin/apache-tomcat-$VERSION.tar.gz && \
     tar -xzf /tmp/apache-tomcat-$VERSION.tar.gz -C /opt && \

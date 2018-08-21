@@ -123,7 +123,7 @@ HEALTHCHECK --interval=30s --timeout=30s --start-period=10s --retries=3 \
 * `docker image build -t <NAME> /path/to/Dockerfile` creates a docker image
   * `-t <NAME>` name the image
   * `/path/to/Dockerfile` the location of the Dockerfile, is it in the same directory `/path/Dockerfile` can replaced with `.`
-* `docker image ls -a` list images
+* `docker images ls -a` list images
   * `-a` list all, includes intermediate images
 * `docker image rm <IMAGE-ID/NAME>` removes an image
 

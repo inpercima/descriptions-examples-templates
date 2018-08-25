@@ -123,7 +123,7 @@ HEALTHCHECK --interval=30s --timeout=30s --start-period=10s --retries=3 \
 * `docker image build -t <NAME> /path/to/Dockerfile` creates a docker image
   * `-t <NAME>` name the image
   * `/path/to/Dockerfile` the location of the Dockerfile, is it in the same directory `/path/Dockerfile` can replaced with `.`
-* `docker images ls -a` list images
+* `docker image ls -a` list images
   * `-a` list all, includes intermediate images
 * `docker image rm <IMAGE-ID/NAME>` removes an image
 
@@ -197,7 +197,7 @@ volumes:
 * `services` the listes services/containers
 * `mysql` the name of one service, e.g. mysql
 * `build` used if the image should build from a Dockerfile like `build: .`
-* `image` the image from the hub wich should be used or the name if build is used
+* `image` the image from the hub which should be used or the name if build is used
 * `container_name` name of the created container
 * `mem_limit` memory limit
 * `ports` bind ports from host to the container
@@ -210,6 +210,7 @@ volumes:
 
 ### Containers
 
+* `docker-compose build` build images
 * `docker-compose up -d` deploy application
 * `docker-compose logs -f` analyze logs
 * `docker-compose down` undeploy application

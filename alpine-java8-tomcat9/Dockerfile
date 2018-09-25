@@ -4,7 +4,7 @@ LABEL maintainer="Marcel Jänicke <inpercima@gmail.com>"
 
 WORKDIR /tmp
 
-ARG VERSION="9.0.10"
+ARG VERSION="9.0.12"
 
 RUN apk upgrade --update && \
     apk add --update curl && \

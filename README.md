@@ -5,7 +5,8 @@
 [![devDependencies Status](https://david-dm.org/inpercima/publicmedia/dev-status.svg)](https://david-dm.org/inpercima/docker?type=dev)
 
 This repository is created to learn and work with docker images and containers.
-It contains some base images and there Dockerfiles.
+It contains some base Dockerfiles.
+The repository is more a template and the individual files can be used in other projects.
 
 ## Prerequisites
 

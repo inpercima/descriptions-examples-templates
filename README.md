@@ -1,8 +1,6 @@
 # docker
 
 [![MIT license](https://img.shields.io/badge/license-MIT-blue.svg)](./LICENSE.md)
-[![dependencies Status](https://david-dm.org/inpercima/publicmedia/status.svg)](https://david-dm.org/inpercima/docker)
-[![devDependencies Status](https://david-dm.org/inpercima/publicmedia/dev-status.svg)](https://david-dm.org/inpercima/docker?type=dev)
 
 This repository is created to learn and work with docker images and containers.
 It contains some base Dockerfiles.
@@ -13,12 +11,6 @@ The repository is more a template and the individual files can be used in other 
 ### Docker
 
 * `docker 17.05.0-ce` or higher
-
-### Optional to run node scripts
-
-* `node 11.8.3` or higher in combination with
-  * `npm 5.6.0` or higher or
-  * `yarn 1.7.0` or higher, used in this repository
 
 ## Getting started
 
@@ -54,23 +46,6 @@ docker-compose up -d
 
 # undeploy mysql
 docker-compose down
-```
-
-### Using node scripts
-
-```bash
-yarn
-# or
-npm install
-
-# build an image e.g. alpine-java8
-cd alpine-java8
-node build.js
-
-# run an image e.g. alpine-java8-spring-boot
-cd alpine-java8-spring-boot
-node build.js
-node run.js
 ```
 
 ## Cheat sheet docker
@@ -111,7 +86,7 @@ HEALTHCHECK --interval=30s --timeout=30s --start-period=10s --retries=3 \
 * `LABEL maintainer` name the author of the image with contact details
 * `WORKDIR` set a path as workdir
 * `ARG` defines a variable for build-time
-* `ENV` defines an environment variable 
+* `ENV` defines an environment variable
 * `RUN` run a command in the image, use a separate line for each command with `&& \`
 * `EXPOSE` define a port the container listen
 * `COPY` copy files or directory from the host system into the image

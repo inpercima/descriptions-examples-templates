@@ -10,7 +10,7 @@ The repository is more a template and the individual files can be used in other 
 
 ### Docker
 
-* `docker 17.05.0-ce` or higher
+* `docker 19.03.5-ce` or higher
 
 ## Getting started
 

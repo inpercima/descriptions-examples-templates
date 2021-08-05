@@ -3,29 +3,31 @@
 In this folder exists a docker-compose file and an .env file.
 Update the .env file for your system.
 
-## Environments
+## Configuration
+
+### Table of contents
 
 * [PHP_MY_ADMIN_PORT](#PHPMYADMINPORT)
 * [MYSQL_PASSWORD](#MYSQLPASSWORD)
 * [MYSQL_USER](#MYSQLUSER)
 
-## `PHP_MY_ADMIN_PORT`
+### `PHP_MY_ADMIN_PORT`
 
 Defines the port for phpMyAdmin
 
-* default: ``
+* default: EMPTY
 * type: `string`
 
-## `MYSQL_PASSWORD`
+### `MYSQL_PASSWORD`
 
 Defines the password to use for healthcheck
 
-* default: ``
+* default: `EMPTY
 * type: `string`
 
-## `MYSQL_USER`
+### `MYSQL_USER`
 
 Defines the user to use for healthcheck
 
-* default: ``
+* default: EMPTY
 * type: `string`

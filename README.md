@@ -131,11 +131,11 @@ HEALTHCHECK --interval=30s --timeout=30s --start-period=10s --retries=3 \
 
 ## Cheat sheet docker-compose
 
-### Introduction
+### Introduction docker-compose
 
 Collection of commands working with docker containers under docker-compose.
 
-### Preparation
+### Preparation docker-compose
 
 To start with docker-compose an file named `docker-compose.yml` is needed. Mostly it is in the same directory working on.
 
@@ -184,7 +184,7 @@ volumes:
 * `depends_on` the service on which this service depends
 * `volumes` parallel to `services` created volumes which can mapped
 
-### Containers
+### Containers docker-compose
 
 * `docker-compose build` build images
 * `docker-compose up -d` deploy application

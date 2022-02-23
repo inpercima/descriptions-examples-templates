@@ -10,14 +10,14 @@ The repository is more a template and the individual files can be used in other 
 
 ### Docker
 
-* `docker 19.03.5-ce` or higher
+* `docker 20.10.12` or higher
 
 ## Getting started
 
 ```bash
 # clone project
-git clone https://github.com/inpercima/docker
-cd docker
+git clone https://github.com/inpercima/start-with-docker
+cd start-with-docker
 ```
 
 ## Usage
@@ -25,15 +25,15 @@ cd docker
 ### Using docker
 
 ```bash
-# build an image e.g. alpine-java8
-cd alpine-java8
-docker image build -t inpercima/alpine-java8 .
+# build an image e.g. alpine-eclipse-temurin-java17
+cd alpine-eclipse-temurin-java17
+docker image build -t inpercima/alpine-eclipse-temurin-java17 .
 
-# run an image e.g. alpine-java8-spring-boot
-cd alpine-java8-spring-boot
-docker image build -t inpercima/alpine-java8-spring-boot .
+# run an image e.g. alpine-eclipse-temurin-java17-spring-boot
+cd alpine-eclipse-temurin-java17-spring-boot
+docker image build -t inpercima/alpine-eclipse-temurin-java17-spring-boot .
 docker container rm -f inpercima_ajsb
-docker container run --name inpercima_ajsb -d -it -p 8080:8080 inpercima/alpine-java8-spring-boot
+docker container run --name inpercima_ajsb -d -it -p 8080:8080 inpercima/alpine-eclipse-temurin-java17-spring-boot
 ```
 
 ### Using docker-compose
@@ -60,7 +60,7 @@ To create a image a configuration file (a simple textfile) named `Dockerfile` is
 This includes commands to build an image.
 
 ```bash
-FROM ubuntu:16.04
+FROM ubuntu:22.04
 
 LABEL maintainer="Marcel Jänicke <inpercima@gmail.com>"
 

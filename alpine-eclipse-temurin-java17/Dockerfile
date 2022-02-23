@@ -1,4 +1,4 @@
-FROM anapsix/alpine-java:8_server-jre_unlimited
+FROM eclipse-temurin:17.0.2_8-jre-alpine
 
 LABEL maintainer="Marcel Jänicke <inpercima@gmail.com>"
 

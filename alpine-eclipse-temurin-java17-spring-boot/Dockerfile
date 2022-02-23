@@ -1,4 +1,4 @@
-FROM inpercima/ubuntu-java8
+FROM eclipse-temurin:17.0.2_8-jre-alpine
 
 LABEL maintainer="Marcel Jänicke <inpercima@gmail.com>"
 
@@ -7,6 +7,9 @@ WORKDIR /usr/src/app
 COPY app.jar .
 
 RUN sh -c 'touch app.jar'
+
+RUN apk add --update curl && \
+    rm -rf /var/cache/apk/*
 
 EXPOSE 8080
 

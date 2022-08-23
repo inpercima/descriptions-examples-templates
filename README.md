@@ -11,6 +11,7 @@ The repository is more a template and the individual files can be used in other 
 ### Docker
 
 * `docker 20.10.17` or higher
+* `docker compose 2.10.0` or higher
 
 ## Getting started
 

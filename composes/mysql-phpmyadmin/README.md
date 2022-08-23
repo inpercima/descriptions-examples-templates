@@ -1,7 +1,7 @@
 # Usage
 
-In this folder exists a docker-compose file and an .env file to use for your projects.
-Update the .env file for your system.
+In this folder exists a `docker-compose.yml` file and an `.env` file to use for your projects.
+Update the `.env` file for your system.
 
 ## Configuration
 

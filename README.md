@@ -3,14 +3,14 @@
 [![MIT license](https://img.shields.io/badge/license-MIT-blue.svg)](./LICENSE.md)
 
 This repository is created to learn and work with docker images and containers.
-It contains some base Dockerfiles.
+It contains some base Dockerfiles and examples.
 The repository is more a template and the individual files can be used in other projects.
 
 ## Prerequisites
 
 ### Docker
 
-* `docker 20.10.12` or higher
+* `docker 20.10.17` or higher
 
 ## Getting started
 
@@ -25,27 +25,27 @@ cd start-with-docker
 ### Using docker
 
 ```bash
-# build an image e.g. alpine-eclipse-temurin-java17
-cd alpine-eclipse-temurin-java17
-docker image build -t inpercima/alpine-eclipse-temurin-java17 .
+# build an image e.g. alpine3-eclipse-temurin-java17
+cd alpine3-eclipse-temurin-java17
+docker image build -t inpercima/alpine3-eclipse-temurin-java17 .
 
-# run an image e.g. alpine-eclipse-temurin-java17-spring-boot
-cd alpine-eclipse-temurin-java17-spring-boot
-docker image build -t inpercima/alpine-eclipse-temurin-java17-spring-boot .
+# run an image e.g. alpine3-eclipse-temurin-java17-spring-boot
+cd alpine3-eclipse-temurin-java17-spring-boot
+docker image build -t inpercima/alpine3-eclipse-temurin-java17-spring-boot .
 docker container rm -f inpercima_ajsb
-docker container run --name inpercima_ajsb -d -it -p 8080:8080 inpercima/alpine-eclipse-temurin-java17-spring-boot
+docker container run --name inpercima_ajsb -d -it -p 8080:8080 inpercima/alpine3-eclipse-temurin-java17-spring-boot
 ```
 
-### Using docker-compose
+### Using docker compose
 
-Some images/container can be build with docker-compose to handle the containers, e.g. mysql.
+Some images/container can be build with docker compose to handle the containers, e.g. `mysql-phpmyadmin` under `composes`.
 
 ```bash
 # deploy mysql
-docker-compose up -d
+docker compose up -d
 
 # undeploy mysql
-docker-compose down
+docker compose down
 ```
 
 ## Cheat sheet docker
@@ -56,7 +56,8 @@ Collection of commands creating/removing docker images and containers and workin
 
 ### Preparation
 
-To create a image a configuration file (a simple textfile) named `Dockerfile` is needed. Mostly it is in the same directory working on.
+To create a image a configuration file (a simple textfile) named `Dockerfile` is needed.
+Mostly it is in the same directory working on.
 This includes commands to build an image.
 
 ```bash
@@ -129,18 +130,19 @@ HEALTHCHECK --interval=30s --timeout=30s --start-period=10s --retries=3 \
 
 * `docker system df` shows size of images, containers and volumes
 
-## Cheat sheet docker-compose
+## Cheat sheet docker compose
 
-### Introduction docker-compose
+### Introduction docker compose
 
-Collection of commands working with docker containers under docker-compose.
+Collection of commands working with docker containers under docker compose.
 
-### Preparation docker-compose
+### Preparation docker compose
 
-To start with docker-compose an file named `docker-compose.yml` is needed. Mostly it is in the same directory working on.
+To start with docker compose an file named `docker-compose.yml` is needed.
+Mostly it is in the same directory working on.
 
 ```bash
-version: "2"
+version: "3.8"
 services:
   mysql:
     image: mysql:5.7
@@ -169,7 +171,7 @@ volumes:
   data-mysql:
 ```
 
-* `version: "2"` version 2 of docker-compose
+* `version: "3.8"` file version of docker compose
 * `services` the listes services/containers
 * `mysql` the name of one service, e.g. mysql
 * `build` used if the image should build from a Dockerfile like `build: .`
@@ -184,9 +186,10 @@ volumes:
 * `depends_on` the service on which this service depends
 * `volumes` parallel to `services` created volumes which can mapped
 
-### Containers docker-compose
+### Containers docker compose
 
-* `docker-compose build` build images
-* `docker-compose up -d` deploy application
-* `docker-compose logs -f` analyze logs
-* `docker-compose down` undeploy application
+* `docker compose build` build images
+* `docker compose up -d` deploy application
+* `docker compose up -d --build` deploy application and rebuild
+* `docker compose logs -f` analyze logs
+* `docker compose down` undeploy application

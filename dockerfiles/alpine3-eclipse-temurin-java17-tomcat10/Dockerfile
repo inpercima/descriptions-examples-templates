@@ -1,10 +1,10 @@
-FROM eclipse-temurin:17.0.2_8-jre-alpine
+FROM eclipse-temurin:17.0.4_8-jre-alpine
 
 LABEL maintainer="Marcel Jänicke <inpercima@gmail.com>"
 
 WORKDIR /tmp
 
-ARG VERSION="10.0.16"
+ARG VERSION="10.0.23"
 
 RUN apk upgrade --update && \
     apk add --update curl && \

@@ -7,12 +7,12 @@ Update the `.env` file for your system.
 
 ### Table of contents
 
-* [COMPOSE_PROJECT_NAME](#COMPOSEPROJECTNAME)
-* [MYSQL_PASSWORD](#MYSQLPASSWORD)
-* [MYSQL_USER](#MYSQLUSER)
-* [MYSQL_VERSION](#MYSQLVERSION)
-* [PHPMYADMIN_PORT](#PHPMYADMINPORT)
-* [PHPMYADMIN_VERSION](#PHPMYADMINVERSION)
+* [COMPOSE_PROJECT_NAME](#compose_project_name)
+* [MYSQL_PASSWORD](#mysql_password)
+* [MYSQL_USER](#mysql_user)
+* [MYSQL_VERSION](#mysql_version)
+* [PHPMYADMIN_PORT](#phpmyadmin_port)
+* [PHPMYADMIN_VERSION](#phpmyadmin_version)
 
 ### `COMPOSE_PROJECT_NAME`
 

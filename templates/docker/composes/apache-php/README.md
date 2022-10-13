@@ -7,7 +7,7 @@ Update the `.env` file for your system.
 
 ### Table of contents
 
-* [MODE](#MODE)
+* [MODE](#mode)
 
 ### `MODE`
 

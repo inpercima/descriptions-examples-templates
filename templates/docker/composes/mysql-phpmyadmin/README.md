@@ -2,8 +2,13 @@
 
 ## Getting started
 
-In this folder exists a `docker-compose.yml` file and an `.env` file to use for your projects.
-Update the `.env` file for your system.
+Create environment file for `docker` and `docker compose` and check the [configuration](#configuration).
+
+```bash
+cp default.env .env
+```
+
+**Note**: This file will not be under version control but listed in .gitignore.
 
 ## Configuration
 

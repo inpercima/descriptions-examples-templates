@@ -1,4 +1,6 @@
-# Usage
+# mysql-phpmyadmin
+
+## Getting started
 
 In this folder exists a `docker-compose.yml` file and an `.env` file to use for your projects.
 Update the `.env` file for your system.
@@ -16,7 +18,7 @@ Update the `.env` file for your system.
 
 ### `COMPOSE_PROJECT_NAME`
 
-Defines a global name for the compose project
+Defines a global name for the compose project used for the container
 
 * default: `EMPTY
 * type: `string`
@@ -55,3 +57,16 @@ Defines the version for phpMyAdmin
 
 * default: EMPTY
 * type: `string`
+
+## Usage
+
+To work with the compose file use following commands.
+Use as project-name the same name from the configuration `COMPOSE_PROJECT_NAME`.
+
+```bash
+# run compose file
+docker compose --project-name "<COMPOSE_PROJECT_NAME>" up -d
+
+# stop compose file
+docker compose down
+```

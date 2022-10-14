@@ -63,9 +63,15 @@ Defines the version for phpMyAdmin
 To work with the compose file use following commands.
 Use as project-name the same name from the configuration `COMPOSE_PROJECT_NAME`.
 
+On the first run you need to look into the logs of mysql to get the admin password.
+Note this b/c this will not shown again.
+
 ```bash
 # run compose file
 docker compose --project-name "<COMPOSE_PROJECT_NAME>" up -d
+
+docker logs <COMMON_PROJECT_NAME>_mysql
+# check the log for "GENERATED ROOT PASSWORD"
 
 # stop compose file
 docker compose down

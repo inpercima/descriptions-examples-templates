@@ -5,8 +5,11 @@
 
 # end project specific
 
-# Created by https://www.toptal.com/developers/gitignore/api/eclipse,intellij+all
-# Edit at https://www.toptal.com/developers/gitignore?templates=eclipse,intellij+all
+# Created by https://www.toptal.com/developers/gitignore/api/eclipse,intellij+all,dotenv
+# Edit at https://www.toptal.com/developers/gitignore?templates=eclipse,intellij+all,dotenv
+
+### dotenv ###
+.env
 
 ### Eclipse ###
 .metadata
@@ -162,4 +165,4 @@ fabric.properties
 !.idea/codeStyles
 !.idea/runConfigurations
 
-# End of https://www.toptal.com/developers/gitignore/api/eclipse,intellij+all
+# End of https://www.toptal.com/developers/gitignore/api/eclipse,intellij+all,dotenv

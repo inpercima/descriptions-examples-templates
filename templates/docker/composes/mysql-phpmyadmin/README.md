@@ -1,8 +1,10 @@
 # mysql-phpmyadmin
 
+This folder contains a suite for working with `mysql` and `phpMyAdmin`.
+
 ## Getting started
 
-Create environment file for `docker` and `docker compose` and check the [configuration](#configuration).
+Create an environment file for `docker` and `docker compose` and check the [configuration](#configuration).
 
 ```bash
 cp default.env .env
@@ -66,18 +68,31 @@ Defines the version for phpMyAdmin
 ## Usage
 
 To work with the compose file use following commands.
-Use as project-name the same name from the configuration `COMPOSE_PROJECT_NAME`.
+Use as `project-name` the same name from the configuration `COMPOSE_PROJECT_NAME`.
 
-On the first run you need to look into the logs of mysql to get the admin password.
-Note this b/c this will not shown again.
+**Note**: On the first run you need to look into the logs of mysql to get the root password.
+The password will not shown again.
 
 ```bash
 # run compose file
 docker compose --project-name "<COMPOSE_PROJECT_NAME>" up -d
 
+# check the log file of the mysql service and search for "GENERATED ROOT PASSWORD" and note this
 docker logs <COMMON_PROJECT_NAME>_mysql
-# check the log for "GENERATED ROOT PASSWORD"
 
 # stop compose file
 docker compose down
+```
+
+## Hints
+
+This compose is created to initialize a database with content from a dump file.
+If you do not want this, remove the following lines:
+
+```bash
+# line 13
+- MYSQL_DATABASE=${COMPOSE_PROJECT_NAME}
+
+# line 26
+- ./docker/mysql/dump.sql:/docker-entrypoint-initdb.d/dump.sql
 ```

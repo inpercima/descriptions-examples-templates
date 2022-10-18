@@ -22,7 +22,7 @@ services:
       - "3306:3306"
     restart: unless-stopped
     volumes:
-      - data_mysql:/var/lib/mysql
+      - data-mysql:/var/lib/mysql
       - ./docker/mysql/dump.sql:/docker-entrypoint-initdb.d/dump.sql
   phpmyadmin:
     container_name: ${COMPOSE_PROJECT_NAME}_phpmyadmin
@@ -37,4 +37,4 @@ services:
       - "${PHPMYADMIN_PORT}:80"
     restart: unless-stopped
 volumes:
-  data_mysql:
+  data-mysql:

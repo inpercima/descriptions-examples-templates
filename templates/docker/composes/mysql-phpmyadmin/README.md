@@ -26,7 +26,7 @@ cp default.env .env
 
 ### `COMPOSE_PROJECT_NAME`
 
-Defines a global name for the compose project used for the container
+Defines a global name for the compose project used for the container and the database
 
 * default: `common`
 * type: `string`

@@ -9,7 +9,15 @@ Update the `.env` file for your system.
 
 ### Table of contents
 
+* [APACHE_PORT](#apache_port)
 * [MODE](#mode)
+
+### `APACHE_PORT`
+
+Defines the port for apache.
+
+* default: `80`
+* type: `string`
 
 ### `MODE`
 

@@ -18,6 +18,7 @@ cp default.env .env
 
 * [COMPOSE_PROJECT_NAME](#compose_project_name)
 * [MYSQL_PASSWORD](#mysql_password)
+* [MYSQL_PORT](#mysql_port)
 * [MYSQL_USER](#mysql_user)
 * [MYSQL_VERSION](#mysql_version)
 * [PHPMYADMIN_PORT](#phpmyadmin_port)
@@ -27,42 +28,49 @@ cp default.env .env
 
 Defines a global name for the compose project used for the container
 
-* default: `EMPTY
+* default: `common`
 * type: `string`
 
 ### `MYSQL_PASSWORD`
 
 Defines the password for mySQL
 
-* default: `EMPTY
+* default: `mysql`
+* type: `string`
+
+### `MYSQL_PORT`
+
+Defines the port for mySQL
+
+* default: `3306`
 * type: `string`
 
 ### `MYSQL_USER`
 
 Defines the user for mySQL
 
-* default: EMPTY
+* default: `mysql`
 * type: `string`
 
 ### `MYSQL_VERSION`
 
 Defines the version for mySQL
 
-* default: EMPTY
+* default: `8.0.30`
 * type: `string`
 
 ### `PHPMYADMIN_PORT`
 
 Defines the port for phpMyAdmin
 
-* default: EMPTY
+* default: `80`
 * type: `string`
 
 ### `PHPMYADMIN_VERSION`
 
 Defines the version for phpMyAdmin
 
-* default: EMPTY
+* default: `5.2.0`
 * type: `string`
 
 ## Usage

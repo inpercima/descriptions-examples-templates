@@ -94,13 +94,15 @@ docker compose --project-name "<COMPOSE_PROJECT_NAME>" down
 
 ## Hints
 
-This compose is created to initialize a database with content from a dump file.
-If you do not want this, remove the following lines:
+This compose is created to initialize a database with the name of `COMPOSE_PROJECT_NAME` and content from a dump file (`dump.sql`).
+If you want to use it, update the dump file with your content.
+
+If you do not want this, remove the dump file and following lines from the compose file:
 
 ```bash
 # line 13
 - MYSQL_DATABASE=${COMPOSE_PROJECT_NAME}
 
 # line 26
-- ./docker/mysql/dump.sql:/docker-entrypoint-initdb.d/dump.sql
+- ./dump.sql:/docker-entrypoint-initdb.d/dump.sql
 ```

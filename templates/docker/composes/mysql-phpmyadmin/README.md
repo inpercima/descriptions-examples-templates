@@ -89,7 +89,7 @@ docker compose --project-name "<COMPOSE_PROJECT_NAME>" up -d
 docker logs <COMMON_PROJECT_NAME>_mysql
 
 # stop compose file
-docker compose down
+docker compose --project-name "<COMPOSE_PROJECT_NAME>" down
 ```
 
 ## Hints

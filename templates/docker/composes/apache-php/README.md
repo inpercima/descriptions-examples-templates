@@ -30,12 +30,12 @@ Valid values are `dev` and `prod`.
 ## Usage
 
 To work with the compose file use following commands.
-Use as project-name a meaningful value.
+Use as `<COMPOSE_PROJECT_NAME>` a meaningful value.
 
 ```bash
 # run compose file
-docker compose --project-name "<PROJECT_NAME>" up -d
+docker compose --project-name "<COMPOSE_PROJECT_NAME>" up -d
 
 # stop compose file
-docker compose down
+docker compose --project-name "<COMPOSE_PROJECT_NAME>" down
 ```
